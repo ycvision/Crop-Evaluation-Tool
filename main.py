@@ -83,68 +83,68 @@ class mywindow(QtWidgets.QMainWindow):
     @staticmethod
     def get_images(root_folder_path):
         original_image_paths = []
-        qian_image_paths = []
-        gaic_image_paths = []
-        ours_image_paths = []
-        shaoyuan_image_paths = []
-        centercrop_image_paths = []
-        ours_no_person_image_paths = []
-        vfn_image_paths = []
+        method1_image_paths = []
+        method2_image_paths = []
+        method3_image_paths = []
+        method4_image_paths = []
+        method5_image_paths = []
+        method6_image_paths = []
+        method7_image_paths = []
 
         original_folder_paths = [os.path.join(root_folder_path, "demo")]
-        qian_folder_paths = [os.path.join(root_folder_path, "method1")]
-        gaic_folder_paths = [os.path.join(root_folder_path, "method2")]
-        ours_folder_paths = [os.path.join(root_folder_path, "method3")]
-        shaoyuan_folder_paths = [os.path.join(root_folder_path, "method4")]
-        centercrop_folder_paths = [os.path.join(root_folder_path, "method5")]
-        ours_no_person_folder_paths = [os.path.join(root_folder_path, "method6")]
-        vfn_folder_paths = [os.path.join(root_folder_path, "method7")]
+        method1_folder_paths = [os.path.join(root_folder_path, "method1")]
+        method2_folder_paths = [os.path.join(root_folder_path, "method2")]
+        method3_folder_paths = [os.path.join(root_folder_path, "method3")]
+        method4_folder_paths = [os.path.join(root_folder_path, "method4")]
+        method5_folder_paths = [os.path.join(root_folder_path, "method5")]
+        method6_folder_paths = [os.path.join(root_folder_path, "method6")]
+        method7_folder_paths = [os.path.join(root_folder_path, "method7")]
 
-        for original_folder_path, qian_folder_path, gaic_folder_path, ours_folder_path, shaoyuan_folder_path, centercrop_folder_path, ours_no_person_folder_path, vfn_folder_path in zip(original_folder_paths, qian_folder_paths, gaic_folder_paths, ours_folder_paths, shaoyuan_folder_paths,
-                                                                                                                                                                                         centercrop_folder_paths, ours_no_person_folder_paths, vfn_folder_paths):
+        for original_folder_path, method1_folder_path, method2_folder_path, method3_folder_path, method4_folder_path, method5_folder_path, method6_folder_path, method7_folder_path in zip(original_folder_paths, method1_folder_paths, method2_folder_paths, method3_folder_paths, method4_folder_paths,
+                                                                                                                                                                                         method5_folder_paths, method6_folder_paths, method7_folder_paths):
             image_names = os.listdir(original_folder_path)
             image_names = sorted(image_names)
             original_image_names = [os.path.join(original_folder_path, image_name) for image_name in image_names]
             original_image_paths += original_image_names
 
-            qian_image_names = [os.path.join(qian_folder_path, "{}_aspect-ratio_1.00.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
-            qian_image_paths += qian_image_names
+            method1_image_names = [os.path.join(method1_folder_path, "{}_aspect-ratio_1.00.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
+            method1_image_paths += method1_image_names
 
-            gaic_image_names = [os.path.join(gaic_folder_path, "{}_no_crop_1.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
-            gaic_image_paths += gaic_image_names
+            method2_image_names = [os.path.join(method2_folder_path, "{}_no_crop_1.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
+            method2_image_paths += method2_image_names
 
-            ours_image_names = [os.path.join(ours_folder_path, "{}_no_crop_1.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
-            ours_image_paths += ours_image_names
+            method3_image_names = [os.path.join(method3_folder_path, "{}_no_crop_1.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
+            method3_image_paths += method3_image_names
 
-            shaoyuan_image_names = [os.path.join(shaoyuan_folder_path, "{}.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
-            shaoyuan_image_paths += shaoyuan_image_names
+            method4_image_names = [os.path.join(method4_folder_path, "{}.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
+            method4_image_paths += method4_image_names
 
-            centercrop_image_names = [os.path.join(centercrop_folder_path, "{}.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
-            centercrop_image_paths += centercrop_image_names
+            method5_image_names = [os.path.join(method5_folder_path, "{}.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
+            method5_image_paths += method5_image_names
 
-            ours_no_person_image_names = [os.path.join(ours_no_person_folder_path, "{}_no_crop_1.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
-            ours_no_person_image_paths += ours_no_person_image_names
+            method6_image_names = [os.path.join(method6_folder_path, "{}_no_crop_1.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
+            method6_image_paths += method6_image_names
 
-            vfn_image_names = [os.path.join(vfn_folder_path, "{}.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
-            vfn_image_paths += vfn_image_names
+            method7_image_names = [os.path.join(method7_folder_path, "{}.{}".format('.'.join(image_name.split(".")[:-1]), image_name.split(".")[-1])) for image_name in image_names]
+            method7_image_paths += method7_image_names
 
         for original_image_path in original_image_paths:
             assert os.path.exists(original_image_path)
-        for qian_image_path in qian_image_paths:
-            assert os.path.exists(qian_image_path), print(qian_image_path)
-        for gaic_image_path in gaic_image_paths:
-            assert os.path.exists(gaic_image_path), print(gaic_image_path)
-        for ours_image_path in ours_image_paths:
-            assert os.path.exists(ours_image_path)
-        for shaoyuan_image_path in shaoyuan_image_paths:
-            assert os.path.exists(shaoyuan_image_path)
-        for centercrop_image_path in centercrop_image_paths:
-            assert os.path.exists(centercrop_image_path)
-        for ours_no_person_image_path in ours_no_person_image_paths:
-            assert os.path.exists(ours_no_person_image_path), print(ours_no_person_image_path)
-        for vfn_image_path in vfn_image_paths:
-            assert os.path.exists(vfn_image_path), print(vfn_image_path)
-        return original_image_paths, qian_image_paths, gaic_image_paths, ours_image_paths, shaoyuan_image_paths, centercrop_image_paths, ours_no_person_image_paths, vfn_image_paths
+        for method1_image_path in method1_image_paths:
+            assert os.path.exists(method1_image_path), print(method1_image_path)
+        for method2_image_path in method2_image_paths:
+            assert os.path.exists(method2_image_path), print(method2_image_path)
+        for method3_image_path in method3_image_paths:
+            assert os.path.exists(method3_image_path)
+        for method4_image_path in method4_image_paths:
+            assert os.path.exists(method4_image_path)
+        for method5_image_path in method5_image_paths:
+            assert os.path.exists(method5_image_path)
+        for method6_image_path in method6_image_paths:
+            assert os.path.exists(method6_image_path), print(method6_image_path)
+        for method7_image_path in method7_image_paths:
+            assert os.path.exists(method7_image_path), print(method7_image_path)
+        return original_image_paths, method1_image_paths, method2_image_paths, method3_image_paths, method4_image_paths, method5_image_paths, method6_image_paths, method7_image_paths
 
     def retrieve_next(self, start=False):
         if not start:
