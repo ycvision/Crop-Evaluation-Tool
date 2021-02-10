@@ -2,11 +2,19 @@
 
 This tool is to evaluate the performances of 7 different cropping algorithms. In this experiment, there are totally 100 images and each cropping algorithm was asked to generate the best square (1:1) crop.
 
+## Getting Started
+
+Clone the project by
+```
+git clone https://github.com/ycvision/Crop-Evaluation-Tool
+```
+or download the zip file.
+
 ## Dataset
 
 Download the dataset from one of the links below:
-* with purdue.edu email: [here](https://purdue0-my.sharepoint.com/:u:/g/personal/cheng159_purdue_edu/ETG0Bi4o7rNLn2-6JKjY3xYBqUaw8k95J7QN_6Kiq6ZQDQ?e=0kwiwT)
-* with hp.com email: [here](https://hp-my.sharepoint.com/:u:/p/yang_cheng/EcJGVyVr6KpJrn-uIjpcXpkBg0dXNfeQGVZuPqN2KB9btA?e=j0gjrX)
+* with purdue.edu email: [here](https://purdue0-my.sharepoint.com/:u:/g/personal/cheng159_purdue_edu/ETZcSkyPc9tJlMiaAqdLTbUBJiEonu_8Xu1rBDXua43sCA?e=agONcy)
+* with hp.com email: [here](https://hp-my.sharepoint.com/:u:/p/yang_cheng/EW9vuUtfFK5KuC6imH5L4ooBZvIYD65_q8Om6Tuk0c7WmA?e=q0OBUD)
 
 Extract the dataset to the current folder. The structure of the folder should look like what is shown below.
 
@@ -30,12 +38,12 @@ Extract the dataset to the current folder. The structure of the folder should lo
 └── README.md
 ```
 
-## Usage
+## Libraries
 
 Following three libraries are required:
-    1. NumPy
-    2. OpenCV
-    3. PyQt5
+1. NumPy
+2. OpenCV
+3. PyQt5
 
 Install the libraries using the command
 
