@@ -33,9 +33,9 @@ Extract the dataset to the current folder. The structure of the folder should lo
 ## Usage
 
 Following three libraries are required:
-    1. NumPy
-    2. OpenCV
-    3. PyQt5
+1. NumPy
+2. OpenCV
+3. PyQt5
 
 Install the libraries using the command
 
