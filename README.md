@@ -37,7 +37,7 @@ python main.py
 
 ## Submission
 
-Upload the file ```results.pkl``` to this website: [https://purdue.ca1.qualtrics.com/jfe/form/SV_3wocl0579kAAz8G](https://purdue.ca1.qualtrics.com/jfe/form/SV_3wocl0579kAAz8G).
+Upload the file ```results.pkl``` to this website and answer two questions: [https://purdue.ca1.qualtrics.com/jfe/form/SV_3wocl0579kAAz8G](https://purdue.ca1.qualtrics.com/jfe/form/SV_3wocl0579kAAz8G). The survey is completely anonymous.
 
 ## Contact
 
