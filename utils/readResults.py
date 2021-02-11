@@ -24,6 +24,8 @@ if __name__ == "__main__":
             res.append(v)
         res = np.array(res)
         assert res.shape == (100, 7)
-        data[idx] = np.sum(res, axis=0)
+        res = np.sum(res, axis=0)
+        print(res)
+        data[idx] = res
     print("Average:\t{}".format(np.average(data, axis=0)))
     print("STD:\t\t{}".format(np.std(data, axis=0)))

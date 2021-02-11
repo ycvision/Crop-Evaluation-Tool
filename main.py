@@ -24,6 +24,9 @@ class mywindow(QtWidgets.QMainWindow):
         # self-defined variables
         self.idx = -1
         self.folder_path = "dataset"
+        if not os.path.exists(self.folder_path):
+            print("dataset folder not found.")
+            return
         self.log_path = "results.pkl"
         self.result = {}
         if os.path.exists(self.log_path):
@@ -32,21 +35,18 @@ class mywindow(QtWidgets.QMainWindow):
             print("File {} exists and is loaded.".format(self.log_path))
             self.idx = len(self.result) - 1
         self.original_image_paths, \
-        self.qian_image_paths, \
-        self.gaic_image_paths, \
-        self.ours_image_paths, \
-        self.shaoyuan_image_paths,\
-        self.centercrop_image_paths, \
-        self.ours_no_person_image_paths, \
-        self.vfn_image_paths = self.get_images(self.folder_path)
-
-        self.num_max = 7
-        self.num_available = len(self.original_image_paths) - 1
+        self.method1_image_paths, \
+        self.method2_image_paths, \
+        self.method3_image_paths, \
+        self.method4_image_paths,\
+        self.method5_image_paths, \
+        self.method6_image_paths, \
+        self.method7_image_paths = self.get_images(self.folder_path)
 
         self.d = {}
 
         # ui setup
-        self.ui.pbProgress.setValue((self.idx + 1) / len(self.original_image_paths) * 100)
+        self.ui.pbProgress.setValue(int(round((self.idx + 1) / len(self.original_image_paths) * 100)))
         self.set_up_image_window(self.ui.gvOriginal)
 
         self.group1 = Group(self.ui.gvCrop1, [self.ui.rbYes1, self.ui.rbNo1], self.ui.lblCrop1)
@@ -58,13 +58,13 @@ class mywindow(QtWidgets.QMainWindow):
         self.group7 = Group(self.ui.gvCrop7, [self.ui.rbYes7, self.ui.rbNo7], self.ui.lblCrop7)
         self.groups = [self.group1, self.group2, self.group3, self.group4, self.group5, self.group6, self.group7]
 
-        self.crop1 = Crop(self.qian_image_paths)
-        self.crop2 = Crop(self.gaic_image_paths)
-        self.crop3 = Crop(self.ours_image_paths)
-        self.crop4 = Crop(self.shaoyuan_image_paths)
-        self.crop5 = Crop(self.centercrop_image_paths)
-        self.crop6 = Crop(self.ours_no_person_image_paths)
-        self.crop7 = Crop(self.vfn_image_paths)
+        self.crop1 = Crop(self.method1_image_paths)
+        self.crop2 = Crop(self.method2_image_paths)
+        self.crop3 = Crop(self.method3_image_paths)
+        self.crop4 = Crop(self.method4_image_paths)
+        self.crop5 = Crop(self.method5_image_paths)
+        self.crop6 = Crop(self.method6_image_paths)
+        self.crop7 = Crop(self.method7_image_paths)
         self.crops = [self.crop1, self.crop2, self.crop3, self.crop4, self.crop5, self.crop6, self.crop7]
 
         self.ui.btnNext.clicked.connect(self.retrieve_next)
@@ -136,17 +136,17 @@ class mywindow(QtWidgets.QMainWindow):
             method7_image_paths += method7_image_names
 
         for original_image_path in original_image_paths:
-            assert os.path.exists(original_image_path)
+            assert os.path.exists(original_image_path), print(original_image_path)
         for method1_image_path in method1_image_paths:
             assert os.path.exists(method1_image_path), print(method1_image_path)
         for method2_image_path in method2_image_paths:
             assert os.path.exists(method2_image_path), print(method2_image_path)
         for method3_image_path in method3_image_paths:
-            assert os.path.exists(method3_image_path)
+            assert os.path.exists(method3_image_path), print(method3_image_path)
         for method4_image_path in method4_image_paths:
-            assert os.path.exists(method4_image_path)
+            assert os.path.exists(method4_image_path), print(method4_image_path)
         for method5_image_path in method5_image_paths:
-            assert os.path.exists(method5_image_path)
+            assert os.path.exists(method5_image_path), print(method5_image_path)
         for method6_image_path in method6_image_paths:
             assert os.path.exists(method6_image_path), print(method6_image_path)
         for method7_image_path in method7_image_paths:
@@ -165,7 +165,6 @@ class mywindow(QtWidgets.QMainWindow):
                 self.result[self.original_image_paths[self.idx]].append(crop.likes[-1])
             with open(self.log_path, "wb") as f:
                 pickle.dump(self.result, f)
-            # print(self.crops[0], self.crops[1], self.crops[2], self.crops[3], self.crops[4])
 
         for group in self.groups:
             group.clear_radio_buttons()
@@ -184,7 +183,6 @@ class mywindow(QtWidgets.QMainWindow):
 
         for group in self.groups:
             group.display(cv2.imread(self.d[group][self.idx]))
-            # group.label.setText(self.d[group][self.idx].split("/")[-2])
 
 
 if __name__ == "__main__":
