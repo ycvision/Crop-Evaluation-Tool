@@ -171,7 +171,7 @@ class mywindow(QtWidgets.QMainWindow):
             group.clear_radio_buttons()
 
         self.idx += 1
-        self.ui.pbProgress.setValue((self.idx + 1) / len(self.original_image_paths) * 100)
+        self.ui.pbProgress.setValue(int(round((self.idx + 1) / len(self.original_image_paths) * 100)))
         if self.idx == len(self.original_image_paths):
             print("Evaluation is now complete.")
             quit()
