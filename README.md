@@ -13,7 +13,7 @@ or download the zip file.
 ## Dataset
 
 Download the dataset from one of the links below:
-* with purdue.edu email: [here](https://purdue0-my.sharepoint.com/:u:/g/personal/cheng159_purdue_edu/ETZcSkyPc9tJlMiaAqdLTbUBJiEonu_8Xu1rBDXua43sCA?e=agONcy)
+* with purdue.edu email: [here](https://purdue0-my.sharepoint.com/:u:/g/personal/cheng159_purdue_edu/EaFQ8UjlR1xGuDHriJ-KnBABzyUwXPzi6Io7GO86dNs09Q?e=J0kQEe)
 * with hp.com email: [here](https://hp-my.sharepoint.com/:u:/p/yang_cheng/EW9vuUtfFK5KuC6imH5L4ooBZvIYD65_q8Om6Tuk0c7WmA?e=q0OBUD)
 
 Extract the dataset to the current folder. The structure of the folder should look like what is shown below.
